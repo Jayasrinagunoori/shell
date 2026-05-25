@@ -2,4 +2,4 @@
 
 # Comment line
 
-echo "Hello World"
+echo "Hello World Script"
