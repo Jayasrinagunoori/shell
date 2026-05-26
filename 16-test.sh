@@ -3,7 +3,7 @@
 NUM1=$1
 NUM2=$2
 
-SUM=$(($(Num1)+$(Num2)))
+SUM=$(echo ($(Num1)+$(Num2)))
 
 echo "Sum of two numbers: $SUM"
 
