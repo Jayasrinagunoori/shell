@@ -4,11 +4,13 @@ USERID=$(id -u)
 
 # Check root access or not
 if [ $USERID -ne 0 ]; then
-    echo "Plase run the script with root access"
+    echo "Please run this script with root access"
+    exit 1
+fi
 
-    fi
-
-    VALIDATE (){
+# first arg -> what are you trying to install
+# second arg -> exit code
+VALIDATE(){
     if [ $2 -ne 0 ]; then
         echo "Installing $1 is ... FAILED"
         exit 1
@@ -17,29 +19,22 @@ if [ $USERID -ne 0 ]; then
     fi
 }
 
+# echo "I am continuing..."
+dnf list installed mysql
 
-#echo "I Am Contining..."
- dnf list instlled Mysql
-
-if [$? -eq 0]; then
-    echo  "MySql is already installed... SKIPPING"
-else 
-
-echo "Installing mysql
-dnf install mysql -y
- echo "Valiadte Mysql $"?
-
+if [ $? -eq 0 ]; then
+    echo "MySQL is already installed ... SKIPPING"
+else
+    echo "Installing MySQL"
+    dnf install mysql -y
+    VALIDATE MySQL $?
 fi
 
-dnf list insatlled nginx
-
-if[$? -eq 0];then
-
-echo "Nginx is already installed...SKIPPING"
-
+dnf list installed nginx
+if [ $? -eq 0 ]; then
+    echo "nginx is already installed ... SKIPPING"
 else
- echo "Installing nginx"
- dnf install nginx -y
- VALIDATE nginx $?
-
+    echo "Installing nginx"
+    dnf install nginx -y
+    VALIDATE nginx $?
 fi
