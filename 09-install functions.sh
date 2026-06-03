@@ -37,4 +37,5 @@ else
     echo "Installing nginx"
     dnf install nginx -y
     VALIDATE nginx $?
+    
 fi
