@@ -33,6 +33,6 @@ do
     VALIDATE "$package" $?
 
   else
-    echo " $package already installed...$G SKIPPING $N"
+    echo -e " $package already installed...$G SKIPPING $N"
 fi
 done
