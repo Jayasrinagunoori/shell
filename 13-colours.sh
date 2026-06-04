@@ -17,11 +17,11 @@ fi
 
 VALIDATE (){
     if [ $2 -ne 0 ]; then
-        echo -e "$TIMESTAMP [Error] $G Installing $N $1 is $R FAILED $N" | tee -a $LOGS_FILE
+        echo -e "$TIMESTAMP [Error] ${G} Installing ${N} $1 is $R FAILED $N" | tee -a $LOGS_FILE
         exit1
     
         else 
-        echo -e "$TIMESTAMP[INFO] $G Installing $N $1 is $Y SUCCESS $N" | tee -a $LOGS_FILE
+        echo -e "$TIMESTAMP[INFO] ${G} Installing ${N} $1 is $Y SUCCESS $N" | tee -a $LOGS_FILE
     fi
 }
 
