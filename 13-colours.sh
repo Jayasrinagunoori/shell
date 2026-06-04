@@ -9,7 +9,7 @@ fi
 
 VALIDATE (){
     if [ $2 -ne 0 ]; then
-        echo  "installing $1 is FAILED
+        echo  "Installing $1 is FAILED"
         exit1
     
         else 
@@ -23,7 +23,7 @@ do
   dnf list installed $package
   if [ $? -ne 0 ]; then
     dnf install $package -y
-    VALIDATE "$package"
+    VALIDATE "$package" $?
 
   else
     echo " $package already installed...SKIPPING"
