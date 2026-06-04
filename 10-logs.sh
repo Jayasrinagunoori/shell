@@ -39,4 +39,5 @@ else
     echo "Installing nginx"
     dnf install nginx -y &>> $LOGS_FILE
     VALIDATE MySQL $?
+    
 fi
