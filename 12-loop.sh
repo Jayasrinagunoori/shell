@@ -13,7 +13,7 @@ if [ $USERID -ne 0 ]; then
 fi
 
 VALIDATE(){
-    IF [ $2 -ne 0 ];then
+    IF [ $2 -ne 0 ]; then
     echo "$Time_Stamp [ERROR]Installing is $1 is ...failes" | tee -a $LOGS_FILE
 
     else
